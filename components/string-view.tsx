@@ -1,5 +1,5 @@
 import { Copy } from "lucide-preact";
-import { Button } from "../components/Button.tsx";
+import { Button } from "./button.tsx";
 
 export function StringDataView({ string }: { string: string }) {
   const copyToClipboard = () => {
@@ -7,7 +7,7 @@ export function StringDataView({ string }: { string: string }) {
   };
 
   return (
-    <div class="flex flex-col gap-4 py-6">
+    <div class="flex flex-col gap-4">
       <div class="flex gap-2 items-center">
         <h2 class="flex-1 text-2xl before:content-['#'] before:me-1 before:text-gray-500">
           String

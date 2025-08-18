@@ -16,7 +16,7 @@ export default function App({ Component }: PageProps) {
         <header class="px-8 py-3 mx-auto flex gap-2 items-center bg-lime-500 dark:bg-lime-600">
           <div class="flex-1">
             <p class="text-xl">
-              Transdevice
+              <a href="/">Transdevice</a>
             </p>
           </div>
           <a
@@ -27,7 +27,7 @@ export default function App({ Component }: PageProps) {
             <SimpleIcon icon={siGithub} />
           </a>
         </header>
-        <div class="max-w-screen-md mx-auto py-8">
+        <div class="max-w-screen-md mx-auto px-8 py-12">
           <Component />
         </div>
       </body>
