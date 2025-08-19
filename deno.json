@@ -31,6 +31,7 @@
     "qrcode.react": "https://esm.sh/*qrcode.react@4.2.0",
     "react": "npm:preact@^10.27.0/compat",
     "simple-icons": "npm:simple-icons@^15.10.0",
+    "swr": "https://esm.sh/swr@2.3.6?alias=react:preact/compat&external=preact",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
