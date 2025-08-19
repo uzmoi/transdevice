@@ -28,6 +28,8 @@
     "preact": "npm:preact@^10.27.0",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
+    "qrcode.react": "https://esm.sh/*qrcode.react@4.2.0",
+    "react": "npm:preact@^10.27.0/compat",
     "simple-icons": "npm:simple-icons@^15.10.0",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
