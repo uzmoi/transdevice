@@ -1,4 +1,5 @@
-import { useComputed, useSignal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
+import { useState } from "preact/hooks";
 import { ScreenShare } from "lucide-preact";
 import { QRCodeSVG } from "qrcode.react";
 import { Button } from "../components/button.tsx";
@@ -7,10 +8,8 @@ import { StringInput } from "../components/string-input.tsx";
 export default function Send() {
   const string = useSignal("");
 
-  const dataId = useSignal<string | null>(null);
-  const url = useComputed(() =>
-    dataId.value == null ? null : `${location.origin}/receive/${dataId}`
-  );
+  const [dataId, setDataId] = useState<string | null>(null);
+  const url = dataId == null ? null : `${location.origin}/receive/${dataId}`;
 
   const send = async () => {
     console.log("send.data %o", string.value);
@@ -20,7 +19,7 @@ export default function Send() {
     });
     const result: { dataId: string } = await res.json();
     console.log("send.result %o", result);
-    dataId.value = result.dataId;
+    setDataId(result.dataId);
   };
 
   return (
@@ -32,10 +31,10 @@ export default function Send() {
           Send <ScreenShare class="inline-block" />
         </Button>
       </div>
-      {url.value && (
+      {url && (
         <div class="flex flex-col gap-4 items-center">
           <p class="select-all">{url}</p>
-          <QRCodeSVG value={url.value} marginSize={4} size={192} />
+          <QRCodeSVG value={url} marginSize={4} size={192} />
         </div>
       )}
     </div>
