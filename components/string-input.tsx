@@ -9,7 +9,7 @@ export function StringInput({ string }: { string: Signal<string> }) {
     if (preEl.current == null) return;
 
     const editor = editable(preEl.current, {
-      schema: plainSchema(),
+      schema: plainSchema({ multiline: true }),
       onChange(value) {
         string.value = value;
       },
@@ -28,7 +28,11 @@ export function StringInput({ string }: { string: Signal<string> }) {
         empty:before:content-['_']
       "
     >
-      {string}
+      {string.value.split("\n").map((line, i) => (
+        <div key={i}>
+          {line || <br/>}
+        </div>
+      ))}
     </pre>
   );
 }

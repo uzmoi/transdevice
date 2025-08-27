@@ -17,7 +17,7 @@ export function StringDataView({ string }: { string: string }) {
         </Button>
       </div>
       <pre class="
-        px-4 py-2 rounded border border-zinc-500 text-lg
+        px-4 py-2 rounded border border-zinc-500 text-lg whitespace-pre-wrap
         empty:before:content-['Empty_string.'] before:text-zinc-400
       ">
         {string}
